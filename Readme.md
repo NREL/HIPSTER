@@ -1,6 +1,4 @@
-## LiAISON-ReEDS
-
-# Lifecyle Analysis Integration into Scalable Opensource Numerical models (LiAISON) with ReEDS
+# HIPSTER (Harmonized Impacts across Products, Scenarios, and Technologies for Environmental and Resource metrics)
 
 ## Objective
 
@@ -57,7 +55,7 @@ folder-LiAISON repository : */LiAISON*
 - Extract required ecoinvent database from ```ecoinvent 3.8_cutoff_ecoSpold02.7z``` into a folder in */data/inputs/ecoinvent.*
 - Rename the extracted folder name to *ecoinvent_3.8_cutoff_ecoSpold02.7z*. Add an underscore between ecoinvent and 3.8.
 
-## How to test run LiAISON-ReEDS ?
+## How to test run HIPSTER ?
 Perform a complete test run through these following steps - 
 - Open a terminal in the root folder. 
 - Type the following commands in the terminal
@@ -82,15 +80,15 @@ Tapajyoti Ghosh
 
 
 
-# LiAISON-ReEDS 
+# HIPSTER 
 
-Harmonized Impacts of Products, Scenarios, and Technologies across Environmental and Resource use metrics (LiAISON-ReEDS).Prospective Life cycle assessment 
+Harmonized Impacts of Products, Scenarios, and Technologies across Environmental and Resource use metrics (HIPSTER).Prospective Life cycle assessment 
 
 ## ReEDS
 
-We connect the Regional Energy Deployment System (ReEDS), a capacity expansion model, to EcoInvent inventories to account for life cycle impacts given different electricity system outcomes. We use generation, emissions, and heat rate data from ReEDS to update EcoInvent databases with generation, emissions, and fuel rate information specific to each ReEDS technology. Harmonized Impacts of Products, Scenarios, and Technologies across Environmental and Resource use metrics (LiAISON-ReEDS).
+We connect the Regional Energy Deployment System (ReEDS), a capacity expansion model, to EcoInvent inventories to account for life cycle impacts given different electricity system outcomes. We use generation, emissions, and heat rate data from ReEDS to update EcoInvent databases with generation, emissions, and fuel rate information specific to each ReEDS technology. Harmonized Impacts of Products, Scenarios, and Technologies across Environmental and Resource use metrics (HIPSTER).
 
-/Root folder-LiAISON-ReEDS repository - **LiAISON-ReEDS**
+/Root folder-HIPSTER repository - **HIPSTER**
 
 
 ## Setup
@@ -98,28 +96,28 @@ We connect the Regional Energy Deployment System (ReEDS), a capacity expansion m
 
 - Open Terminal (MAC and Linux) or Anaconda prompt(Windows).
 
-- Navigate to the */conda* folder of LiAISON-ReEDS repository in the terminal.
+- Navigate to the */conda* folder of HIPSTER repository in the terminal.
 
 - Type following commands for windows pc
 
-  - ```conda env create -f environment_tutorial.yml -n LiAISON-ReEDS-23```
+  - ```conda env create -f environment_tutorial.yml -n HIPSTER-23```
 
 
-  - ```conda activate LiAISON-ReEDS-23```
+  - ```conda activate HIPSTER-23```
 
 - Type following commands for mac
 
-  - ```conda env create -f environment_tutorial.yml -n LiAISON-ReEDS-23```
+  - ```conda env create -f environment_tutorial.yml -n HIPSTER-23```
 
-  - ```conda activate LiAISON-ReEDS-23```
+  - ```conda activate HIPSTER-23```
 
 
 ### If environment building does not work from yaml file
 
 - Type following commands
 
-  - ```conda create -n LiAISON-ReEDS-23 python=3.9```
-  - ```conda activate LiAISON-ReEDS-23```
+  - ```conda create -n HIPSTER-23 python=3.9```
+  - ```conda activate HIPSTER-23```
   - ```pip install brightway2==2.3```
   - ```pip install pyyaml==5.4.1```
   - ```pip install premise==1.5.7```
@@ -129,19 +127,19 @@ We connect the Regional Energy Deployment System (ReEDS), a capacity expansion m
   
 
 ## Extracting Ecoinvent
-Extract required ecoinvent database from the **ecoinvent3.x.7z** file and store in within a folder for running LiAISON-ReEDS in the next steps. By default, the file is in the **ecoinvent.7z** file in */data/inputs/ecoinvent.*
+Extract required ecoinvent database from the **ecoinvent3.x.7z** file and store in within a folder for running HIPSTER in the next steps. By default, the file is in the **ecoinvent.7z** file in */data/inputs/ecoinvent.*
 
-## Running LiAISON-ReEDS
+## Running HIPSTER
 
-LiAISON-ReEDS can be run through these following steps - 
+HIPSTER can be run through these following steps - 
 
  - Create a **conda environment** with the suitable packages on your machine. 
  - In the */data* folder, edit the **configuration yaml file**. (Check step 2 *OR* step 3)
- - Make sure the **reeds data files and market updated reeds inventory** files are present in the */data/inputs/reeds_data/* folder. ( Will be updated later on integration of ReEDS-LiAISON-ReEDS framework and LiAISON-ReEDS)
+ - Make sure the **reeds data files and market updated reeds inventory** files are present in the */data/inputs/reeds_data/* folder. ( Will be updated later on integration of ReEDS-HIPSTER framework and HIPSTER)
  - Make sure the **emission_bridge, process_name_bridge, location_bridge** files located in the */data/inputs* folder are present and properly formatted. 
  - Make sure the **foreground inventory** is present in the */data/inputs* folder and properly formatted. 
  - Make sure the **ecoinvent folder** with the **ecoinvent files** are present in a specific directory. 
- - Run **LiAISON-ReEDS** (check step 3).
+ - Run **HIPSTER** (check step 3).
  - Check results in in the */data/outputs* folder.
 
 ### Step 1:  Creation of brightway2 environment folder. 
@@ -166,15 +164,15 @@ Create an environment folder for brightway2 environments in an address with enou
 ```
 
 
-### Step 4_1: LiAISON-ReEDS run command through run.sh file
+### Step 4_1: HIPSTER run command through run.sh file
 - Edit the run.sh file with relevant directory information
   
-      ENVPATH="/Users/tghosh/Desktop/LiAISON-ReEDS/env"
-      CODEDIR="/Users/tghosh/Desktop/LiAISON-ReEDS/code"
-      DATADIR="/Users/tghosh/Desktop/LiAISON-ReEDS/data"
+      ENVPATH="/Users/tghosh/Desktop/HIPSTER/env"
+      CODEDIR="/Users/tghosh/Desktop/HIPSTER/code"
+      DATADIR="/Users/tghosh/Desktop/HIPSTER/data"
       yaml="simplelca"
       
-   - **DATADIR**: This is the path to the data folder of the LiAISON-ReEDS repository. 
+   - **DATADIR**: This is the path to the data folder of the HIPSTER repository. 
    - **ENVPATH**: This is the path to the environment folder of Brightway2. Brightway2 creates an environment folder in the system path of your machine. (Appdata for Windows, Library for MAC).  The environment folder can be changed to user specified directory if needed. Create a directory if required and point to that directory path. Create an environment folder for brightway2 environments in an address with enough disk space
    - **CODEDIR**: This is the path to the code directory within the LiASON root folder. 
    - **yaml**: The name of the config yaml file being used for the run. 
@@ -182,16 +180,16 @@ Create an environment folder for brightway2 environments in an address with enou
   - `chmod +x run.sh`
   - `./run.sh`
   
-### Step 4_2: LiAISON-ReEDS run command through command line
+### Step 4_2: HIPSTER run command through command line
 
 ```python __main__.py --datapath=*path-to-data-folder* --envpath=*path-to-environment-folder* --lca_config_file=*path-to-scenario-yaml-file*```
 
- - **path-to-data-folder**: This is the path to the data folder of the LiAISON-ReEDS repository. 
+ - **path-to-data-folder**: This is the path to the data folder of the HIPSTER repository. 
  - **path-to-enviroment-folder**: This is the path to the environment folder of Brightway2. Brightway2 creates an environment folder in the system path of your machine. (Appdata for Windows, Library for MAC).  The environment folder can be changed to user specified directory if needed. Create a directory if required and point to that directory path. Create an environment folder for brightway2 environments in an address with enough disk space
  - **path-to-scenario-yaml-file**: This is the path to the scenario yaml file. Two files are provided within the data folder. 
- - **Example for MAC Users** : ```python __main__.py --datapath=/Users/myname/LiAISON-ReEDS/data --envpath=/Users/myname/env --lca_config_file=/Users/myname/Dynamic-LCA-with-LiAISON-ReEDS/data/simplelca.yaml```
+ - **Example for MAC Users** : ```python __main__.py --datapath=/Users/myname/HIPSTER/data --envpath=/Users/myname/env --lca_config_file=/Users/myname/Dynamic-LCA-with-HIPSTER/data/simplelca.yaml```
 
- - **Example for Windows Users** : ```python __main__.py --datapath="C:\documents\myname\Dynamic-LCA-with-LiAISON-ReEDS\data" --envpath="C:\documents\myname\env" --lca_config_file="C:\documents\myname\LiAISON-ReEDS\data\peme.yaml"```
+ - **Example for Windows Users** : ```python __main__.py --datapath="C:\documents\myname\Dynamic-LCA-with-HIPSTER\data" --envpath="C:\documents\myname\env" --lca_config_file="C:\documents\myname\HIPSTER\data\peme.yaml"```
 
 ## Results
 - After running, csv result files are written in the *data/output/* file. 
@@ -199,9 +197,9 @@ Create an environment folder for brightway2 environments in an address with enou
 
 ## Developer information
 
-The next part of the tutorial is helpful for LCA researchers to build **inventories, bridging core and configuration files** for life cycle analysis. It also focuses on discussion of the **ReEDS LiAISON-ReEDS framework.**
+The next part of the tutorial is helpful for LCA researchers to build **inventories, bridging core and configuration files** for life cycle analysis. It also focuses on discussion of the **ReEDS HIPSTER framework.**
 
-### ReEDS LiAISON-ReEDS Framework
+### ReEDS HIPSTER Framework
  - Discussion on core input files.
  - Discussion of ReEDS output files.
  - Discussion of ReEDS scenarios.
@@ -209,7 +207,7 @@ The next part of the tutorial is helpful for LCA researchers to build **inventor
  - Discussion of matching of technologies between ReEDS and Ecoinvent. 
  - Discussion of caveats and assumptions. 
  - Discussion of creation of grid mix at different spatial levels. 
- - Linking of this framework with LiAISON-ReEDS. 
+ - Linking of this framework with HIPSTER. 
 
 
 ###  Details of the config_yaml file
@@ -246,7 +244,7 @@ scenario_parameters:
   base_database: ecoinvent3.8
   base_project: base_project_ecoinvent38
   initial_year: 2020
-  lca_project_name: LiAISON-ReEDS_training
+  lca_project_name: HIPSTER_training
   location: US
   mc_runs: 1
   primary_process_to_study: market group for electricity, high voltage new test
@@ -260,15 +258,15 @@ scenario_parameters:
    - ecoinvent: points to ecoinvent folder and ecoinvent version to be used for the analysis. 
    - ecoinventdata: data folder location for ecoinvent data files. 
    - image: data folder for the IMAGE files
-   - LiAISON-ReEDSdata: data folder for the files for running 
-   - reeds_data: data folder for the ReEDS input files from the ReEDS-LiAISON-ReEDS framework.
+   - HIPSTERdata: data folder for the files for running 
+   - reeds_data: data folder for the ReEDS input files from the ReEDS-HIPSTER framework.
    - output: folder for the output results
    
  - **flags**
      - correct uncertainty: correction of uncertainty issues in the ecoinvent dataset. 
      - mc_foreground: monte carlo of the foreground inventory to be done.
      - lca: flag for doing life cycle assessment calculations
-     - lca_activity_modification: life cycle inventory needs to be modified if required. This is required for developing LiAISON-ReEDS because this makes sure the market mix for US grid mix electricity within ecoinvent is updated with the ReEDS generated US grid mix. Thus all activities in the background LCI uses ReEDS grid mix. 
+     - lca_activity_modification: life cycle inventory needs to be modified if required. This is required for developing HIPSTER because this makes sure the market mix for US grid mix electricity within ecoinvent is updated with the ReEDS generated US grid mix. Thus all activities in the background LCI uses ReEDS grid mix. 
      - run_database_editor: flag for running the database editor which edits the old database and updates it with new information. Also stores the database in a project. 
      - run_database_reader: flag for running the database reader which reads the ecoinvent data and stores it in a project. 
      - regional_sensitivity: flag for changing regions and performing sensitivity on regions without changing the input excel file. 
@@ -276,9 +274,9 @@ scenario_parameters:
  - **input_filenames**:
 
    - emission_bridge: emission bridge file name.
-   - creation_inventory: This points to the ReEDS input files from the ReEDS LiAISON-ReEDS framework with the ReEDS output data, grid mixes at different spatial levels, etc. 
+   - creation_inventory: This points to the ReEDS input files from the ReEDS HIPSTER framework with the ReEDS output data, grid mixes at different spatial levels, etc. 
    - foreground_inventory: input data file for life cycle inventory of the process under study. 
-   - modification_inventory: input data file for modification of existing datasets in ecoinvent. Required for LiAISON-ReEDS to modify the US grid mix within the ecoinvent database. 
+   - modification_inventory: input data file for modification of existing datasets in ecoinvent. Required for HIPSTER to modify the US grid mix within the ecoinvent database. 
    - location_bridge: location bridge file name.
    - process_bridge:  process bridge file name.
 
