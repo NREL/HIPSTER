@@ -3,8 +3,8 @@
 ## Objective
 
 **Perform**
-1. Life cycle assessment calculations of standard ReEDS:tm: scenarios. 
-2. Perform life cycle assessment using predicted grid energy system based on standard ReEDS:tm: scenarios. 
+1. Life cycle assessment calculations of standard ReEDS<sup>TM</sup> scenarios. 
+2. Perform life cycle assessment using predicted grid energy system based on standard ReEDS<sup>TM</sup> scenarios. 
 
 
 ## Requirements
@@ -84,9 +84,9 @@ Tapajyoti Ghosh
 
 Harmonized Impacts of Products, Scenarios, and Technologies across Environmental and Resource use metrics (HIPSTER).Prospective Life cycle assessment 
 
-## ReEDS:tm:
+## ReEDS<sup>TM</sup>
 
-We connect the Regional Energy Deployment System (ReEDS:tm:), a capacity expansion model, to EcoInvent inventories to account for life cycle impacts given different electricity system outcomes. We use generation, emissions, and heat rate data from ReEDS:tm: to update EcoInvent databases with generation, emissions, and fuel rate information specific to each ReEDS:tm: technology. Harmonized Impacts of Products, Scenarios, and Technologies across Environmental and Resource use metrics (HIPSTER).
+We connect the Regional Energy Deployment System (ReEDS<sup>TM</sup>), a capacity expansion model, to EcoInvent inventories to account for life cycle impacts given different electricity system outcomes. We use generation, emissions, and heat rate data from ReEDS<sup>TM</sup> to update EcoInvent databases with generation, emissions, and fuel rate information specific to each ReEDS<sup>TM</sup> technology. Harmonized Impacts of Products, Scenarios, and Technologies across Environmental and Resource use metrics (HIPSTER).
 
 /Root folder-HIPSTER repository - **HIPSTER**
 
@@ -135,7 +135,7 @@ HIPSTER can be run through these following steps -
 
  - Create a **conda environment** with the suitable packages on your machine. 
  - In the */data* folder, edit the **configuration yaml file**. (Check step 2 *OR* step 3)
- - Make sure the **ReEDS:tm: data files and market updated ReEDS:tm: inventory** files are present in the */data/inputs/ReEDS:tm:_data/* folder. ( Will be updated later on integration of ReEDS:tm:-HIPSTER framework and HIPSTER)
+ - Make sure the **ReEDS<sup>TM</sup> data files and market updated ReEDS<sup>TM</sup> inventory** files are present in the */data/inputs/ReEDS<sup>TM</sup>_data/* folder. ( Will be updated later on integration of ReEDS<sup>TM</sup>-HIPSTER framework and HIPSTER)
  - Make sure the **emission_bridge, process_name_bridge, location_bridge** files located in the */data/inputs* folder are present and properly formatted. 
  - Make sure the **foreground inventory** is present in the */data/inputs* folder and properly formatted. 
  - Make sure the **ecoinvent folder** with the **ecoinvent files** are present in a specific directory. 
@@ -197,14 +197,14 @@ Create an environment folder for brightway2 environments in an address with enou
 
 ## Developer information
 
-The next part of the tutorial is helpful for LCA researchers to build **inventories, bridging core and configuration files** for life cycle analysis. It also focuses on discussion of the **ReEDS:tm: HIPSTER framework.**
+The next part of the tutorial is helpful for LCA researchers to build **inventories, bridging core and configuration files** for life cycle analysis. It also focuses on discussion of the **ReEDS<sup>TM</sup> HIPSTER framework.**
 
-### ReEDS:tm: HIPSTER Framework
+### ReEDS<sup>TM</sup> HIPSTER Framework
  - Discussion on core input files.
- - Discussion of ReEDS:tm: output files.
- - Discussion of ReEDS:tm: scenarios.
- - Discussion of ReEDS:tm: regions.
- - Discussion of matching of technologies between ReEDS:tm: and Ecoinvent. 
+ - Discussion of ReEDS<sup>TM</sup> output files.
+ - Discussion of ReEDS<sup>TM</sup> scenarios.
+ - Discussion of ReEDS<sup>TM</sup> regions.
+ - Discussion of matching of technologies between ReEDS<sup>TM</sup> and Ecoinvent. 
  - Discussion of caveats and assumptions. 
  - Discussion of creation of grid mix at different spatial levels. 
  - Linking of this framework with HIPSTER. 
@@ -221,7 +221,7 @@ Example: **simplelca.yaml**
 data_directories:
   ecoinvent_data: ecoinvent/ecoinvent_3.8_cutoff_ecoSpold02/datasets/
   liaisondata: inputs/
-  ReEDS:tm:_data: ReEDS:tm:_data/
+  ReEDS<sup>TM</sup>_data: ReEDS<sup>TM</sup>_data/
   output: output/
 flags:
   correct uncertainty: false
@@ -233,9 +233,9 @@ flags:
   regional_sensitivity: false
 input_filenames:
   emission_bridge: emission_name_bridge.csv
-  creation_inventory: Mid_Case2020_ReEDS:tm:_data.csv
+  creation_inventory: Mid_Case2020_ReEDS<sup>TM</sup>_data.csv
   foreground_inventory: example.csv
-  modification_inventory: market_updated_ReEDS:tm:_inventory.csv
+  modification_inventory: market_updated_ReEDS<sup>TM</sup>_inventory.csv
   location_bridge: location_bridge.csv
   process_bridge: process_name_bridge.csv
 output_filenames:
@@ -249,7 +249,7 @@ scenario_parameters:
   mc_runs: 1
   primary_process_to_study: market group for electricity, high voltage new test
   process: electricity
-  updated_database: ecoinvent_2020_ReEDS:tm:MidCase
+  updated_database: ecoinvent_2020_ReEDS<sup>TM</sup>MidCase
   updated_project_name: reed_grid_2020
 
 ```
@@ -259,14 +259,14 @@ scenario_parameters:
    - ecoinventdata: data folder location for ecoinvent data files. 
    - image: data folder for the IMAGE files
    - HIPSTERdata: data folder for the files for running 
-   - ReEDS:tm:_data: data folder for the ReEDS:tm: input files from the ReEDS:tm:-HIPSTER framework.
+   - ReEDS<sup>TM</sup>_data: data folder for the ReEDS<sup>TM</sup> input files from the ReEDS<sup>TM</sup>-HIPSTER framework.
    - output: folder for the output results
    
  - **flags**
      - correct uncertainty: correction of uncertainty issues in the ecoinvent dataset. 
      - mc_foreground: monte carlo of the foreground inventory to be done.
      - lca: flag for doing life cycle assessment calculations
-     - lca_activity_modification: life cycle inventory needs to be modified if required. This is required for developing HIPSTER because this makes sure the market mix for US grid mix electricity within ecoinvent is updated with the ReEDS:tm: generated US grid mix. Thus all activities in the background LCI uses ReEDS:tm: grid mix. 
+     - lca_activity_modification: life cycle inventory needs to be modified if required. This is required for developing HIPSTER because this makes sure the market mix for US grid mix electricity within ecoinvent is updated with the ReEDS<sup>TM</sup> generated US grid mix. Thus all activities in the background LCI uses ReEDS<sup>TM</sup> grid mix. 
      - run_database_editor: flag for running the database editor which edits the old database and updates it with new information. Also stores the database in a project. 
      - run_database_reader: flag for running the database reader which reads the ecoinvent data and stores it in a project. 
      - regional_sensitivity: flag for changing regions and performing sensitivity on regions without changing the input excel file. 
@@ -274,7 +274,7 @@ scenario_parameters:
  - **input_filenames**:
 
    - emission_bridge: emission bridge file name.
-   - creation_inventory: This points to the ReEDS:tm: input files from the ReEDS:tm: HIPSTER framework with the ReEDS:tm: output data, grid mixes at different spatial levels, etc. 
+   - creation_inventory: This points to the ReEDS<sup>TM</sup> input files from the ReEDS<sup>TM</sup> HIPSTER framework with the ReEDS<sup>TM</sup> output data, grid mixes at different spatial levels, etc. 
    - foreground_inventory: input data file for life cycle inventory of the process under study. 
    - modification_inventory: input data file for modification of existing datasets in ecoinvent. Required for HIPSTER to modify the US grid mix within the ecoinvent database. 
    - location_bridge: location bridge file name.
